@@ -1,3 +1,5 @@
+setInterval(updateTime, 1000);
+
 const hours = document.querySelector('.hours');
 const minutes = document.querySelector('.minutes');
 const seconds = document.querySelector('.seconds');
@@ -13,4 +15,4 @@ function updateTime() {
     hours.style.transform = `rotate(${hour}deg)`;
 }
 
-setInterval(updateTime, 1000);
+updateTime();
