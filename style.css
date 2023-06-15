@@ -1,0 +1,139 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+:root {
+    --main-cl:  #e0e0e0;
+    --secondary-cl: rgba(0, 0, 0, 0.712);
+    --size: 600px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    font-family: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    background-color: var(--main-cl);
+    color: var(--secondary-cl);
+    min-height: 100%;  
+    display: grid;
+    place-items: center;
+}
+
+.clock { 
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: #e0e0e0;
+    box-shadow:  10px 10px 20px #bebebe,
+                -10px -10px 20px #ffffff,
+                inset 10px 10px 20px #bebebe,
+                inset -10px -10px 20px #ffffff;
+    position: relative;
+}
+
+.clock > div {
+    position: absolute;
+    inset: 15px;
+    text-align: center;
+    transform: rotate(calc(var(--i) * (360deg / 12)));
+}
+
+.clock > div > span {
+    display: inline-block;
+    font-weight: 600;  
+    transform: rotate(calc(var(--i) * (-360deg / 12)));
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: black;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;  
+    width: 4px;
+    background-color: black;
+}
+
+.seconds {
+    width: 2px;
+    height: 38%;
+    background-color: red;
+}
+
+.minutes {
+    height: 33%; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.hours {
+    height: 22%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    :root {
+        --size: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --size: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --size: 300px;
+    }
+}
+
