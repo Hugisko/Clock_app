@@ -1,5 +1,3 @@
-setInterval(updateTime, 1000);
-
 const hours = document.querySelector('.hours');
 const minutes = document.querySelector('.minutes');
 const seconds = document.querySelector('.seconds');
@@ -16,3 +14,4 @@ function updateTime() {
 }
 
 updateTime();
+setInterval(updateTime, 1000);
